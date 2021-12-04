@@ -1,0 +1,25 @@
+{
+  "name": "leaf",
+  "version": "1.0.0",
+  "description": "Website Creation",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omar-devops/locs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omar-devops/locs/issues"
+  },
+  "homepage": "https://github.com/omar-devops/locs#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
