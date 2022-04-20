@@ -50,7 +50,7 @@
                                 <a href="tel:+012 345 67890"><i class="fa fa-phone-alt"></i>+424 335-5280</a>
                             </div>
                             <div class="topbar-col">
-                                <a href="mailto:info@example.com"><i class="fa fa-envelope"></i>ocs.leaf@gmail.com</a>
+                                <a href="mailto:ocs.leaf@gmail.com"><i class="fa fa-envelope"></i>ocs.leaf@gmail.com</a>
                             </div>
                         </div>
                         <div class="navbar navbar-expand-lg bg-light navbar-light">
@@ -81,7 +81,7 @@
                     <div class="d-none d-lg-block col-md-5">
                         <div class="form text-center">
                             <h3>Get A Quote</h3>
-                            <section id="form" action="#">
+                            <form action="https://formsubmit.co/omkaydin@gmail.com" method="POST" id="form1" action="#">
                                 <div class="form-group">
                                     <label for="name" class="col-sm-2 control-label"></label>
                                     <div class="col-sm-12">
@@ -110,7 +110,7 @@
                                             value="Send" class="btn disabled">Get a quote</button>
                                     </div>
                                 </div>
-                            </section>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -147,11 +147,11 @@
                         href="https://www.yelp.com/biz/leaf-organic-cleaning-services-bellevue?hrid=93gCvvNoa2XP35hD-2jv1g">
                         <div class="testimonial-item">
                             <div class="testimonial-img">
-                                <img src="img/linda-review.jpg" width="200" height="150" alt="">
+                                <img src="img/linda.png" width="200" height="150" alt="">
                             </div>
                             <div class="testimonial-content">
                                 <p>
-                                    Update: It has now been nearly 3 months since we left Washington, and I can  honestly say that there is no better cleaning company ...
+                                    Update: It has now been nearly 3 months since we left Washington, and I can  honestly say that there is no better ...
                                 </p>
                                 <h3>Linda N.</h3>
                                 <h4>Frisco, TX</h4>
@@ -221,7 +221,7 @@
                     <div class="col-sm-12 col-lg-7 text-center">
                         <h2>Get A Free Quote</h2>
                     </div>
-                    <form class="emailForm col-sm-8 col-lg-5">
+                    <form action="https://formsubmit.co/omkaydin@gmail.com" method="POST" id="form2" class="emailForm col-sm-8 col-lg-5">
                         <input class="form-control" id="mail" type="mail" name="mail" placeholder="Email here"
                             onkeydown="emailValidation()">
                         <span id="emailText" type="text"></span>
@@ -248,7 +248,7 @@
                             <p>You Might Ask</p>
                             <h2>Frequently Asked Questions</h2>
                         </div>
-                        <img src="img/faqs.jpg" alt="Image">
+                        <img src="img/IMG_1654.PNG" height="350px" alt="Image">
                     </div>
                     <div class="col-md-7 ">
                         <div id="accordion">
@@ -396,7 +396,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>    
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
@@ -421,6 +421,7 @@
             } else {
                 document.getElementById("submit").classList.add("disabled");
             }
+            console.log(emailValid, NameValid);
         }
         document.getElementById("email").addEventListener("keyup", function (input) {
             if (!input.target.value) {
@@ -461,7 +462,7 @@
 
         let EmailValid = false;
 
-        function CheckStatus() {
+        function CheckStatus2() {
             if (EmailValid) {
                 document.getElementById("btnSubmit").classList.remove("disabled");
             } else {
@@ -475,7 +476,7 @@
                 EmailValid = true;
 
             }
-            CheckStatus();
+            CheckStatus2();
             console.log("input.target.value")
         });
 
@@ -489,29 +490,25 @@
 
     <script>
         function validation() {
-            var form = document.getElementsByClassName("form-group");
-            var form = document.getElementById("form");
-            var email = document.getElementById("email").value;
-            var text = document.getElementById("text");
-            var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-            if (email.match(pattern)) {
-                form.classList.add("valid");
-                form.classList.remove("invalid");
+            var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var emailform = document.getElementById("email").value;
+            var btnform = document.getElementById("submit");
+
+            if (emailform.match(pattern)) {
+                btnform.classList.remove("invalid");
                 text.innerHTML = "Your Email Address is Valid";
                 text.style.color = "#00FF00"
                 text.style.fontSize = "14px"
 
             } else {
-                form.classList.remove("valid");
-                form.classList.add("invalid");
+                btnform.classList.add("invalid");
                 text.innerHTML = "Please Enter Valid Email Address";
                 text.style.color = "#FF0000";
                 text.style.fontSize = "14px"
             }
             if (email == "") {
-                form.classList.remove("valid");
-                form.classList.remove("invalid");
+                btnform.classList.add("valid");
                 text.innerHTML = "";
                 text.style.color = "#00FF00"
                 text.style.fontSize = "14px"
@@ -522,33 +519,36 @@
     </script>
     <script>
         function emailValidation() {
+
             var mail = document.getElementById("mail").value;
             var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+            var btnSubmit = document.getElementById("btnSubmit")
+
             if (mail.match(emailPattern)) {
-                form.classList.add("valid");
-                form.classList.remove("invalid");
+                btnSubmit.classList.remove("invalid");
                 emailText.innerHTML = "Your Email Address is Valid";
                 emailText.style.color = "#00FF00"
                 emailText.style.fontSize = "14px"
 
             } else {
-                form.classList.remove("valid");
-                form.classList.add("invalid");
+                btnSubmit.classList.add("invalid");
                 emailText.innerHTML = "Please Enter Valid Email Address";
                 emailText.style.color = "#FF0000";
                 emailText.style.fontSize = "14px"
             }
             if (mail == "") {
-                form.classList.remove("valid");
-                form.classList.remove("invalid");
+                btnSubmit.classList.add("invalid");
                 emailText.innerHTML = "";
                 emailText.style.color = "#00FF00"
                 emailText.style.fontSize = "14px"
 
             }
 
+
         };
+
+
     </script>
 
 </body>

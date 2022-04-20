@@ -340,6 +340,10 @@ a:focus {
 
 */
 
+.invalid {
+    pointer-events: none;
+}
+
 .header .hero .form h3 {
     color: #ffffff;
     font-weight: 300;
