@@ -28,6 +28,8 @@ a:focus {
     color: #333333;
     outline: none;
     text-decoration: none;
+    background-color: white;
+    border-radius: px;
 }
 
 .btn:focus {
@@ -76,6 +78,12 @@ a:focus {
     color: white !important;
 }
 
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
 .header {
     position: relative;
     width: 100%;
@@ -93,6 +101,10 @@ a:focus {
 
 .hero.row{
     background: linear-gradient(rgba(67, 124, 42, 1), rgba(67, 124, 42, .9), rgba(67, 124, 42, 1)), url(../img/header.jpg); 
+}
+
+.header .brand img:hover {
+    filter: brightness(120%);
 }
 
 @media (min-width: 992px) {
@@ -118,11 +130,12 @@ a:focus {
 }
 
 .header .brand img {
-    width: 100%;
-    max-width: 150px;
-    height: 100%;
-    max-height: 100px;
+    /* width: 100%; */
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
 }
+
 
 .header .topbar {
     position: relative;
@@ -1791,6 +1804,7 @@ a:focus {
     background:rgba(67, 124, 42);
     color: #ffffff;
     font-weight: 300;
+    text-align: center;
 }
 
 .footer .footer-contact,
